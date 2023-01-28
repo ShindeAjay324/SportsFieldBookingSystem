@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 
 import com.sbs.dto.PaymentDto;
 import com.sbs.entity.Payment;
+import com.sbs.exception.EmailNotFoundException;
+import com.sbs.exception.PaymentIdNotFoundException;
 import com.sbs.repository.PaymentRepository;
 import com.sbs.service.PaymentService;
 @Service
@@ -15,7 +17,8 @@ public class PaymentServiceImpl implements PaymentService {
 
 	@Override
 	public PaymentDto updatePaymentInfo(PaymentDto paymentDto, Integer id) {
-		Payment payment=paymentRepository.findById(id).get();
+		Payment payment=paymentRepository.findById(id)
+				.orElseThrow(()-> new PaymentIdNotFoundException("Payment Id not found "+ id));
 		if(paymentDto.getAmount()!=null) {
 			payment.setAmount(paymentDto.getAmount());
 		}
