@@ -1,0 +1,54 @@
+"2023-04-27 22:25:58 [restartedMain] INFO  com.sbs.SbsVersion21Application - Starting SbsVersion21Application using Java 1.8.0_162 on DESKTOP-RKEAM2V with PID 3108 (C:\Users\shind\OneDrive\Desktop\SportsFieldBookingSystem\sbs_version2\sbs_version2-1\target\classes started by shind in C:\Users\shind\OneDrive\Desktop\SportsFieldBookingSystem\sbs_version2\sbs_version2-1)
+""2023-04-27 22:25:58 [restartedMain] INFO  com.sbs.SbsVersion21Application - No active profile set, falling back to 1 default profile: "default"
+""2023-04-27 22:25:59 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+""2023-04-27 22:25:59 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+""2023-04-27 22:26:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2023-04-27 22:26:01 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 230 ms. Found 6 JPA repository interfaces.
+""2023-04-27 22:26:03 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2023-04-27 22:26:03 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2023-04-27 22:26:03 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+""2023-04-27 22:26:03 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2023-04-27 22:26:03 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4640 ms
+""2023-04-27 22:26:03 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2023-04-27 22:26:05 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2023-04-27 22:26:05 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sts2?createDatabaseIfNotExist=true'
+""2023-04-27 22:26:05 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2023-04-27 22:26:05 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+""2023-04-27 22:26:06 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2023-04-27 22:26:06 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+""2023-04-27 22:26:08 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2023-04-27 22:26:08 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2023-04-27 22:26:10 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2023-04-27 22:26:12 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2c1734f6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fbd7783, org.springframework.security.web.context.SecurityContextPersistenceFilter@10cc3643, org.springframework.security.web.header.HeaderWriterFilter@23dd8a4e, org.springframework.web.filter.CorsFilter@1260c97f, org.springframework.security.web.authentication.logout.LogoutFilter@4f3f728b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6b38944d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42b927b5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9d528d7, org.springframework.security.web.session.SessionManagementFilter@555e2e31, org.springframework.security.web.access.ExceptionTranslationFilter@7a3c74da]
+""2023-04-27 22:26:13 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2023-04-27 22:26:13 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2023-04-27 22:26:13 [restartedMain] INFO  com.sbs.SbsVersion21Application - Started SbsVersion21Application in 15.753 seconds (JVM running for 18.196)
+""2023-04-27 22:31:46 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m11s684ms539µs800ns).
+""2023-04-27 22:37:46 [restartedMain] INFO  com.sbs.SbsVersion21Application - Starting SbsVersion21Application using Java 1.8.0_162 on DESKTOP-RKEAM2V with PID 12928 (C:\Users\shind\OneDrive\Desktop\SportsFieldBookingSystem\sbs_version2\sbs_version2-1\target\classes started by shind in C:\Users\shind\OneDrive\Desktop\SportsFieldBookingSystem\sbs_version2\sbs_version2-1)
+""2023-04-27 22:37:46 [restartedMain] INFO  com.sbs.SbsVersion21Application - No active profile set, falling back to 1 default profile: "default"
+""2023-04-27 22:37:46 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+""2023-04-27 22:37:46 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+""2023-04-27 22:37:49 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2023-04-27 22:37:49 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 299 ms. Found 6 JPA repository interfaces.
+""2023-04-27 22:37:51 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2023-04-27 22:37:51 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2023-04-27 22:37:51 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.71]
+""2023-04-27 22:37:51 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2023-04-27 22:37:51 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5325 ms
+""2023-04-27 22:37:51 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2023-04-27 22:37:53 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2023-04-27 22:37:53 [restartedMain] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:mysql://localhost:3306/sts2?createDatabaseIfNotExist=true'
+""2023-04-27 22:37:54 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2023-04-27 22:37:54 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+""2023-04-27 22:37:55 [restartedMain] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2023-04-27 22:37:55 [restartedMain] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+""2023-04-27 22:37:57 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2023-04-27 22:37:57 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2023-04-27 22:37:59 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2023-04-27 22:38:01 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5b5a9ab5, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19418023, org.springframework.security.web.context.SecurityContextPersistenceFilter@1480c091, org.springframework.security.web.header.HeaderWriterFilter@61d8e255, org.springframework.web.filter.CorsFilter@582a85e4, org.springframework.security.web.authentication.logout.LogoutFilter@1ddc57eb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5259923a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@42f25cb4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@31a7be60, org.springframework.security.web.session.SessionManagementFilter@75fb5432, org.springframework.security.web.access.ExceptionTranslationFilter@525e9fc2]
+""2023-04-27 22:38:02 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+""2023-04-27 22:38:02 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2023-04-27 22:38:02 [restartedMain] INFO  com.sbs.SbsVersion21Application - Started SbsVersion21Application in 17.679 seconds (JVM running for 20.198)
+""2023-04-27 22:39:09 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2023-04-27 22:39:11 [http-nio-8080-exec-10] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 907 ms
+"

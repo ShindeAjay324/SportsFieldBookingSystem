@@ -11,11 +11,12 @@ import com.sbs.dto.UserDto;
 import com.sbs.dto.UserDtowithOutPass;
 import com.sbs.entity.User;
 import com.sbs.exception.EmailNotFoundException;
-import com.sbs.exception.NameNotFoundException;
 import com.sbs.exception.UserNotFoundException;
 import com.sbs.repository.UserRepository;
 import com.sbs.service.UserService;
 
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 	@Autowired
@@ -30,6 +31,7 @@ public class UserServiceImpl implements UserService {
 		User user = new User();
 		BeanUtils.copyProperties(userDto, user);
 		userRepository.save(user);
+		log.info("User register Successfully, Id of user is "+user.getUserId() );
 		return userDto;
 	}
 
@@ -39,6 +41,7 @@ public class UserServiceImpl implements UserService {
 				.orElseThrow(()-> new EmailNotFoundException("Email address not found"+ userDto.getEmail()));
 		if (user != null && userDto.getEmail().equals(user.getEmail())
 				&& userDto.getPassword().equals(user.getPassword())) {
+			log.info("User login Successfully, Id of user is "+user.getUserId() );
 			return user;
 		}
 		return null;
@@ -53,6 +56,7 @@ public class UserServiceImpl implements UserService {
 			BeanUtils.copyProperties(e, dto);
 			dtos.add(dto);
 		});
+		log.info("All users fetch successfully");
 		return dtos;
 	}
 
@@ -62,6 +66,7 @@ public class UserServiceImpl implements UserService {
 				.orElseThrow(() -> new UserNotFoundException("User not found" + id));
 		UserDtowithOutPass dtowithOutPass = new UserDtowithOutPass();
 		BeanUtils.copyProperties(user, dtowithOutPass);
+		log.info("User fetch successfully, userId is "+user.getUserId());
 		return dtowithOutPass;
 	}
 
@@ -70,6 +75,7 @@ public class UserServiceImpl implements UserService {
 		User user = userRepository.findById(id).
 				orElseThrow(() -> new UserNotFoundException("User not found" + id));
 		userRepository.deleteById(id);
+		log.info("User remove from DB successfully, id of user is "+id);
 		return user.getUserId();
 	}
 
@@ -88,12 +94,13 @@ public class UserServiceImpl implements UserService {
 		userRepository.save(user);
 		UserDto newUserDto = new UserDto();
 		BeanUtils.copyProperties(user, newUserDto);
-
+		log.info("User info updated successfully, userId is "+user.getUserId());
 		return newUserDto;
 	}
 
 	protected void deleteAll() {
 		userRepository.deleteAll();
+		log.info("All user data deleted");
 	}
 
 }

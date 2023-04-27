@@ -25,9 +25,12 @@ import com.sbs.service.PaymentService;
 import com.sbs.service.SportsFieldService;
 import com.sbs.service.UserService;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
-
+@Slf4j
 @RestController
+@RequiredArgsConstructor
 public class AdminController {
 	@Autowired
 	private SportsFieldService fieldService;
@@ -42,7 +45,7 @@ public class AdminController {
 	
 	@PostMapping("/addfields")
 	public ResponseEntity<Response> addFields(@RequestBody SportsFieldDto fieldDto){
-		System.out.println(fieldDto);
+		log.info("Adding Field"+fieldDto.getName());
 		 SportsFieldDto dto= fieldService.addFields(fieldDto);
 		
 		if (dto != null) {
@@ -62,7 +65,7 @@ public class AdminController {
 	
 	@GetMapping("/allUsers")
 	public ResponseEntity<Response> getUsers(){
-		
+		log.info("Sending All Users");
 		List<UserDtowithOutPass> userDtos = userService.getUsers();
 		
 		if (userDtos != null) {
@@ -82,6 +85,7 @@ public class AdminController {
 	
 	@GetMapping("/users/{id}")
 	public ResponseEntity<Response> getUser(@PathVariable Integer id){
+		log.info("Getting User of Id"+ id);
 		UserDtowithOutPass userDtos = userService.getUser(id);
 		if (userDtos != null) {
 			response.setError(false);
@@ -100,6 +104,7 @@ public class AdminController {
 	
 	@DeleteMapping("/users/{id}")
 	public ResponseEntity<Response> deleteUser(@PathVariable Integer id){
+		log.info("Deleting User of Id"+ id);
 		Integer Id = userService.deleteUser(id);
 		if (Id != null) {
 			response.setError(false);
@@ -118,6 +123,7 @@ public class AdminController {
 	
 	@PutMapping("/users/{id}")
 	public ResponseEntity<Response> changeUserInfo(@RequestBody UserDto userDto,@PathVariable Integer id){
+		log.info("Changing User info of"+ id);
 		UserDto userDtoReturnInfo = userService.changeUserInfo(userDto,id);
 		if (userDtoReturnInfo != null) {
 			response.setError(false);
@@ -135,6 +141,7 @@ public class AdminController {
 	}
 	@PutMapping("/payment/{id}")
 	public ResponseEntity<Response> updatePaymentInfo(@RequestBody PaymentDto paymentDto,@PathVariable Integer id){
+		log.info("Updating payment info of"+ id);
 		PaymentDto newPaymentDto = paymentService.updatePaymentInfo(paymentDto,id);
 		if (newPaymentDto != null) {
 			response.setError(false);
@@ -153,6 +160,7 @@ public class AdminController {
 	
 	@GetMapping("/getBookinginfoAdmin/{id}")
 	public ResponseEntity<Response> getBookingInfo(@PathVariable Integer id){
+		log.info("Getting booking info of"+ id);
 		GetBookingInfoForAdminDto adminDto = bookingService.getBookingInfo(id);
 		if (adminDto != null) {
 			response.setError(false);

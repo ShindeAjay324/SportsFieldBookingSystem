@@ -6,10 +6,12 @@ import org.springframework.stereotype.Service;
 
 import com.sbs.dto.PaymentDto;
 import com.sbs.entity.Payment;
-import com.sbs.exception.EmailNotFoundException;
 import com.sbs.exception.PaymentIdNotFoundException;
 import com.sbs.repository.PaymentRepository;
 import com.sbs.service.PaymentService;
+
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Service
 public class PaymentServiceImpl implements PaymentService {
 	@Autowired
@@ -33,7 +35,7 @@ public class PaymentServiceImpl implements PaymentService {
 		PaymentDto newPaymentDto=new PaymentDto();
 		BeanUtils.copyProperties(payment, newPaymentDto);
 		paymentRepository.save(payment);
-		
+		log.info("Payment Info Updated of Payment Id "+payment.getPaymentId());
 		return newPaymentDto;
 	}
 

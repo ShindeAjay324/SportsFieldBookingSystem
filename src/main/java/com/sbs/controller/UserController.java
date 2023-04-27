@@ -19,6 +19,9 @@ import com.sbs.response.Response;
 import com.sbs.service.BookingService;
 import com.sbs.service.SportsFieldService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 public class UserController {
 	@Autowired
@@ -30,6 +33,7 @@ public class UserController {
 
 	@GetMapping("/showSportsFields")
 	public ResponseEntity<Response> showSportsFields() {
+		log.info("Showing sports field");
 		List<SportsField> sportsField = sportsFieldService.showSportsFields();
 		if (sportsField != null) {
 			response.setError(false);
@@ -49,6 +53,7 @@ public class UserController {
 	@PostMapping("/user/{userId}/sportsField/{sportsFieldId}/booking")
 	public ResponseEntity<Response> booking(@RequestBody BookingDto bookingDto, @PathVariable Integer userId,
 			@PathVariable Integer sportsFieldId) {
+		log.info("Adding booking of user "+userId+" of sports field "+sportsFieldId);
 		Integer bookingId = bookingService.booking(bookingDto,userId,sportsFieldId);
 		if (bookingId != null) {
 			response.setError(false);
@@ -67,6 +72,7 @@ public class UserController {
 	
 	@GetMapping("/getBookinginfoUser/{id}")
 	public ResponseEntity<Response> getBookingInfo(@PathVariable Integer id){
+		log.info("Retriving Booking info of Id"+ id);
 		GetBookingInfoForUserDto adminDto = bookingService.getBookingInfoUser(id);
 		if (adminDto != null) {
 			response.setError(false);

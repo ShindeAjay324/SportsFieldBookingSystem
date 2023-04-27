@@ -10,24 +10,27 @@ import com.sbs.dto.SportsFieldDto;
 import com.sbs.entity.SportsField;
 import com.sbs.repository.SportsFieldRepository;
 import com.sbs.service.SportsFieldService;
+
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Service
 public class SportsFieldServiceImpl implements SportsFieldService {
 	@Autowired
-	private SportsFieldRepository SportsRepository;
+	private SportsFieldRepository sportsRepository;
 
 	@Override
 	public SportsFieldDto addFields(SportsFieldDto fieldDto) {
-		System.out.println(fieldDto);
 		SportsField field=new SportsField();
 		BeanUtils.copyProperties(fieldDto, field);
-		SportsRepository.save(field);
+		sportsRepository.save(field);
+		log.info(field.getName()+" field save successfully");
 		return fieldDto;
 	}
 
 	@Override
 	public List<SportsField> showSportsFields() {
-		List<SportsField> fields=SportsRepository.findAll();
-		return fields;
+		log.info("All Sports field fetch successfully");
+		return sportsRepository.findAll();
 	}
 
 	

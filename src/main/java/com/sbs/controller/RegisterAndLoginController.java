@@ -14,6 +14,8 @@ import com.sbs.entity.User;
 import com.sbs.response.Response;
 import com.sbs.service.UserService;
 
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @RestController
 public class RegisterAndLoginController {
 	@Autowired
@@ -23,8 +25,8 @@ public class RegisterAndLoginController {
 	
 	@PostMapping("/register")
 	public ResponseEntity<Response> register(@RequestBody UserDto userDto){
-		
-		 UserDto dto= service.register(userDto);
+		log.info("Adding User");
+		UserDto dto= service.register(userDto);
 		
 		if (dto != null) {
 			response.setError(false);
@@ -43,8 +45,8 @@ public class RegisterAndLoginController {
 	
 	@PostMapping("/login")
 	public ResponseEntity<Response> login(@RequestBody UserDto userDto){
-		
-		 User user= service.login(userDto);
+		log.info("User trying to logging of email"+ userDto.getEmail());
+		User user= service.login(userDto);
 		
 		if (user.getUserId() != null) {
 			response.setError(false);

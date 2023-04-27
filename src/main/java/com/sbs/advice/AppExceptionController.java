@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import com.sbs.exception.EmailNotFoundException;
 import com.sbs.exception.NameNotFoundException;
 import com.sbs.exception.PaymentIdNotFoundException;
+import com.sbs.exception.UserNameNotFoundException;
 import com.sbs.exception.UserNotFoundException;
 import com.sbs.response.Response;
 
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @RestControllerAdvice
 public class AppExceptionController {
 	
@@ -22,8 +25,7 @@ public class AppExceptionController {
 	public ResponseEntity<Response> userNotFoundException(UserNotFoundException ex){
 		response.setStatus("404");
 		response.setMessage(ex.getMessage());
-		//response.setList(null);
-		
+		log.error(ex.getMessage());
 		return new ResponseEntity<Response>(response, HttpStatus.NOT_FOUND);
 	}
 	
@@ -32,7 +34,7 @@ public class AppExceptionController {
 		response.setStatus("404");
 		response.setMessage(ex.getMessage());
 		response.setList(null);
-		
+		log.error(ex.getMessage());
 		return new ResponseEntity<Response>(response, HttpStatus.NOT_FOUND);
 	}
 	
@@ -41,7 +43,7 @@ public class AppExceptionController {
 		response.setStatus("404");
 		response.setMessage(ex.getMessage());
 		response.setList(null);
-		
+		log.error(ex.getMessage());
 		return new ResponseEntity<Response>(response, HttpStatus.NOT_FOUND);
 	}
 	
@@ -50,7 +52,16 @@ public class AppExceptionController {
 		response.setStatus("404");
 		response.setMessage(ex.getMessage());
 		response.setList(null);
-		
+		log.error(ex.getMessage());
+		return new ResponseEntity<Response>(response, HttpStatus.NOT_FOUND);
+	}
+	
+	@ExceptionHandler(UserNameNotFoundException.class)
+	public ResponseEntity<Response> userNameNotFoundException(UserNameNotFoundException ex){
+		response.setStatus("404");
+		response.setMessage(ex.getMessage());
+		response.setList(null);
+		log.error(ex.getMessage());
 		return new ResponseEntity<Response>(response, HttpStatus.NOT_FOUND);
 	}
 

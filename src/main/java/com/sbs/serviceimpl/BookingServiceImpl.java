@@ -32,6 +32,9 @@ import com.sbs.repository.TimeslotRepository;
 import com.sbs.repository.UserRepository;
 import com.sbs.service.BookingService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class BookingServiceImpl implements BookingService {
 	@Autowired
@@ -63,14 +66,17 @@ public class BookingServiceImpl implements BookingService {
 			timeSlot.setEndTime(bookingDto.getTimeSlot().getEndTime());
 			if (timeSlot != null) {
 				timeSlotRepository.save(timeSlot);
+				log.info("Timeslot Save, start time "
+				+timeSlot.getStartTime()+" End time "+timeSlot.getEndTime());
 			}
 
 			Payment payment = new Payment();
 			payment.setAmount(bookingDto.getPaymentDto().getAmount());
 			payment.setPaymentDate(bookingDto.getPaymentDto().getPaymentDate());
 			payment.setPaymentMethod(bookingDto.getPaymentDto().getPaymentMethod());
-			if (payment != null) {
+			if (payment!= null) {
 				paymentRepository.save(payment);
+				log.info("Payment Info save, Id of Payment info "+payment.getPaymentId());
 			}
 			BookingStatus bookingStatus = new BookingStatus();
 			bookingStatus.setStatus("Successfull");
@@ -81,6 +87,7 @@ public class BookingServiceImpl implements BookingService {
 			booking.setTimeSlot(timeSlot);
 			booking.setUser(user);
 			bookingRepository.save(booking);
+			log.info("Booking Successful of id "+booking.getBookingId());
 			return booking.getBookingId();
 		} else if (bookingList != null) {
 			for (int i = 0; i < bookingList.size(); i++) {
@@ -97,11 +104,14 @@ public class BookingServiceImpl implements BookingService {
 			BeanUtils.copyProperties(timeSlot, bookingDto.getTimeSlot());
 			if (timeSlot != null) {
 				timeSlotRepository.save(timeSlot);
+				log.info("Timeslot Save, start time "
+						+timeSlot.getStartTime()+" End time "+timeSlot.getEndTime());
 			}
 			Payment payment = new Payment();
 			BeanUtils.copyProperties(payment, bookingDto.getPaymentDto());
 			if (payment != null) {
 				paymentRepository.save(payment);
+				log.info("Payment Info save, Id of Payment info "+payment.getPaymentId());
 			}
 			BookingStatus bookingStatus = new BookingStatus();
 			bookingStatus.setStatus("Successfull");
@@ -112,6 +122,7 @@ public class BookingServiceImpl implements BookingService {
 			booking.setTimeSlot(timeSlot);
 			booking.setUser(user);
 			bookingRepository.save(booking);
+			log.info("Booking Successful of id "+booking.getBookingId());
 			return booking.getBookingId();
 
 		}
@@ -155,6 +166,7 @@ public class BookingServiceImpl implements BookingService {
 		bookingInfoForAdminDto.setSportsField(fieldDtoAdmin);
 		bookingInfoForAdminDto.setTimeSlot(slotDtoAdmin);
 		bookingInfoForAdminDto.setUser(userDtoAdmin);
+		log.info("Booking info fetch for id "+ booking.getBookingId());
 		return bookingInfoForAdminDto;
 	}
 
@@ -194,7 +206,7 @@ public class BookingServiceImpl implements BookingService {
 		bookingInfoForUserDto.setSportsField(sportsFieldDto);
 		bookingInfoForUserDto.setTimeSlot(timeSlotDto);
 		bookingInfoForUserDto.setUser(userDto);
-
+		log.info("Booking info fetch for id "+ booking.getBookingId());
 		return bookingInfoForUserDto;
 	}
 
